@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Articles - Kavita Samant</title>
+		
+		<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.png"/>
+
+		<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+		<!-- highlight.js -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+		<script>hljs.highlightAll();</script>
+		<style>
+			.bib-content pre {
+				background-color: #f8f8f8;
+				padding: 10px;
+				border-radius: 4px;
+				max-width: 100%;
+				overflow-x: auto;
+			}
+		</style>
+
+		<!-- Google ad
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8774532707532337"
+		crossorigin="anonymous"></script> -->
+	</head>
+
+	<body style="background: #edf2f7;">
+		<div class="flex flex-col h-screen">	
+			
+			<!-- navbar -->
+			<div class="fixed inset-x-0 left-0 right-0 w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 z-10">
+				<div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto   md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+				<div class="p-4 flex flex-row items-center justify-between">
+					<a href="../" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Kavita Samant</a>
+					<button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+					<svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+						<path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+						<path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+					</svg>
+					</button>
+				</div>
+				
+				<nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+					<a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="../">Home</a>
+			
+					<a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="../research/">Research</a>
+
+					<a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="../resume/">CV</a>
+
+					<a class="px-4 py-2 mt-2 text-sm font-semibold bg-gray-200 text-gray-900 rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="../articles/">Articles</a>
+
+					<a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="../miscellaneous/">Miscellaneous</a>
+					
+					<a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="../contact/">Contact</a>	  
+				</nav>
+				</div>
+			</div>
+
+			<!-- section -->
+			<section class="text-gray-600 body-font">
+				<div class="container xl:px-36 py-24 mx-auto">
+					<div class="flex flex-col items-center text-center justify-center">
+						<h2 class="text-gray-900 text-3xl title-font font-medium">ARTICLES</h2>
+						<div class="w-24 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
+					</div>
+					<p class="leading-relaxed lg:text-lg md:text-base text-justify my-4 mb-4 mx-4">
+						Here, you'll find all our publications, preprints, and notes, regularly updated to keep you informed about our latest work. Explore our diverse collection spanning various fields of study.
+					</p>
+
+					<hr class="h-0.5 my-4 bg-blue-300 border-0">
+
+					<div class="text-center">
+						<h1 class="text-2xl font-bold">Preprints</h1>
+					</div>
+								
+					<hr class="h-0.5 my-4 bg-blue-300 border-0">
+
+					<div class="-my-8">
+						<div class="py-8 flex flex-wrap md:flex-nowrap ml-4">
+							<div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+								<img src="../assets/img/arxiv.svg" alt="preprint" class="w-36 h-auto ">
+							</div>
+							<div class="md:flex-grow">
+								<p class="mb-4 text-lg">
+									Spectral Bounds of the Generating Graph of $\mathbb{Z}_n$
+								</p>
+								<p class="mb-4">
+									<span class="authors">Authors: </span><strong>Kavita Samant</strong>, A. Satyanarayana Reddy
+
+								</p>
+								<p class="mb-4">
+									<span class="text-gray-400">Year of arXiv: 2025 </span>
+								</p>
+								<div class="flex space-x-4 items-center my-2">
+									<div class="border rounded-lg border-gray-600 p-1">
+										<button class="abstract-button text-white rounded text-blue-500">Abstract</button>
+									</div>
+									<div class="abstract-overlay hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+										<div class="abstract-content p-4 bg-white rounded w-1/2">
+											<p class="leading-relaxed lg:text-lg md:text-base text-justify">
+												Let $G$ be a group. A group is said to be $k$-generated if it can be generated by its $k$ elements. A generating set of $G$ is called a minimal generating set if no proper subset of it generates G. A minimal generating set of a group can have different sizes. The generating graph $\Gamma(G)$ of a group $G$ is defined as a graph with the vertex set $G$, where two distinct vertices are adjacent if they together generate $G$. This graph is particularly useful when studying 2-generated groups. In this context, consider the group $G=\mathbb{Z}_n$, the integers modulo n. In this paper, we explore various graph-theoretic properties of the generating graph $\Gamma(\mathbb{Z}_n)$ and investigate the spectra of its adjacency and Laplacian matrices. Additionally, we explicitly determine the set of all possible minimal generating sets of $\mathbb{Z}_n$ of size $k$.					
+											</p>
+											<button class="close-button bg-red-500 text-white py-2 px-4 mt-4 rounded">Close</button>
+										</div>
+									</div>
+									<div class="border rounded-lg border-gray-600 p-1">
+										<button class="abstract-button text-white rounded text-blue-500">bib</button>
+									</div>
+									<div class="abstract-overlay hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+										<div class="bib-content p-2 bg-white rounded w-1/2">
+											<pre>
+<code class="latex"> 
+	@misc{samant2025spectralboundsgeneratinggraph,
+		title={Spectral Bounds of the Generating Graph of $\mathbb{Z}_n.$}, 
+		author={Kavita Samant and A. Satyanarayana Reddy},
+		year={2025},
+		eprint={2501.09771},
+		archivePrefix={arXiv},
+		primaryClass={math.CO},
+		url={https://arxiv.org/abs/2501.09771}, 
+  }
+</code>
+											</pre>
+											<button class="close-button bg-red-500 text-white py-2 px-4 mt-4 rounded">Close</button>
+										</div>
+									</div>  
+									<div class="border rounded-lg border-gray-600 p-1">
+										<a href="https://arxiv.org/abs/2501.09771" target="_blank" class="text-blue-500 hover:text-blue-800">arXiv</a>
+									</div>
+									<div class="border rounded-lg border-gray-600 p-1">
+										<a href="https://arxiv.org/pdf/2501.09771" target="_blank" class="text-blue-500 hover:text-blue-800">PDF</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<hr class="w-1/2 h-px mx-auto bg-gray-300 border-0">
+
+						<!-- <div class="py-8 flex flex-wrap md:flex-nowrap ml-4">
+							<div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+								<img src="../assets/img/arxiv.svg" alt="preprint" class="w-36 h-auto ">
+							</div>
+							<div class="md:flex-grow">
+								<p class="mb-4 text-lg">
+									Counterexample to a conjecture about dihedral quandle
+								</p>
+								<p class="mb-4">
+									<span class="authors">Authors: </span><strong>Sachchidanand Prasad</strong> and Saikat Panja
+								</p>
+								<p class="mb-4">
+									<span class="text-gray-400">Year of arXiv: 2022</span>
+								</p>
+								<div class="flex space-x-4 items-center my-2">
+									<div class="border rounded-lg border-gray-600 p-1">
+										<button class="abstract-button text-white rounded text-blue-500">Abstract</button>
+									</div>
+									<div class="abstract-overlay hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+										<div class="abstract-content p-4 bg-white rounded w-1/2">
+											<p class="leading-relaxed lg:text-lg md:text-base text-justify">
+												It was conjectured that the augmentation ideal of a dihedral quandle of even order $n>2$ satisfies $|\Delta^k(\text{R}_n)/\Delta^{k+1}(\text{R}_{n})|=n$ for all $k\geq 2$. In this article we provide a counterexample against this conjecture. 
+											</p>
+											<button class="close-button bg-red-500 text-white py-2 px-4 mt-4 rounded">Close</button>
+										</div>
+									</div>
+									<div class="border rounded-lg border-gray-600 p-1">
+										<button class="abstract-button text-white rounded text-blue-500">bib</button>
+									</div>
+									<div class="abstract-overlay hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+										<div class="bib-content p-2 bg-white rounded w-1/2">
+											<pre>
+<code class="latex"> 
+@article{panjaprasad2022counterexample,
+	title={Counterexample to a conjecture about dihedral quandle},
+	author={Panja, Saikat and Prasad, Sachchidanand},
+	journal={arXiv preprint arXiv:2205.15024},
+	year={2022}
+}
+</code>
+											</pre>
+											<button class="close-button bg-red-500 text-white py-2 px-4 mt-4 rounded">Close</button>
+										</div>
+									</div> 
+									<div class="border rounded-lg border-gray-600 p-1">
+										<a href="https://arxiv.org/abs/2205.15024v1" target="_blank" class="text-blue-500 hover:text-blue-800">arXiv</a>
+									</div>
+									<div class="border rounded-lg border-gray-600 p-1">
+										<a href="https://arxiv.org/pdf/2205.15024.pdf" target="_blank" class="text-blue-500 hover:text-blue-800">PDF</a>
+									</div>
+								</div>
+							</div>
+						</div> -->
+
+						<hr class="h-0.5 my-4 bg-gray-300 border-0">
+
+						<div class="text-center">
+							<h1 class="text-2xl font-bold">Accepted Publications</h1>
+						</div>
+						
+						<hr class="h-0.5 my-4 bg-gray-300 border-0">
+								
+						<div class="py-8 flex flex-wrap md:flex-nowrap ml-4">
+							<div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+								<img src="../assets/img/RinM.jpg" alt="preprint" class="w-36 h-auto ">
+							</div>
+							<div class="md:flex-grow">
+								<p class="mb-4 text-lg">
+									Generating Graphs of Finite Dihedral Groups
+								</p>
+								<p class="mb-4">
+									<span class="authors">Authors: </span><strong>Kavita Samant</strong> and A. Satyanarayana Reddy
+								</p>
+								<p class="mb-4">
+									<span class="text-gray-400">Year of arXiv: 2023</span>
+									<br>
+									<span class="text-gray-400">Year of publication: 2023</span>
+									<br>
+									<span class="text-gray-400">Volume 78, 7 August 2023, Article no. 200</span>
+								</p>
+								<div class="flex space-x-4 items-center my-2">
+									<div class="border rounded-lg border-gray-600 p-1">
+										<button class="abstract-button text-white rounded text-blue-500">Abstract</button>
+									</div>
+									<div class="abstract-overlay hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+										<div class="abstract-content p-4 bg-white rounded w-1/2">
+											<p class="leading-relaxed lg:text-lg md:text-base text-justify">
+												For a group $G$, the generating graph 
+ is defined as the graph with the vertex set $G$, and any two distinct vertices of 
+ are adjacent if they generate $G$. In this paper, we study the generating graph of $D_n$
+ where $D_n$ is a Dihedral group of order $2n$. We explore various graph theoretic properties, and determine complete spectrum of the adjacency and the Laplacian matrix of $\Gamma(D_n)$. Moreover, we compute some distance and degree based topological indices of $\Gamma(D_n)$.
+											</p>
+											<button class="close-button bg-red-500 text-white py-2 px-4 mt-4 rounded">Close</button>
+										</div>
+									</div>
+									<div class="border rounded-lg border-gray-600 p-1">
+										<button class="abstract-button text-white rounded text-blue-500">bib</button>
+									</div>
+									<div class="abstract-overlay hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+										<div class="bib-content p-2 bg-white rounded w-1/2">
+											<pre>
+<code class="latex"> 
+	@article{Reddy2023,
+		title = {Generating Graphs of Finite Dihedral Groups},
+		author = {Reddy, A. Satyanarayana and Samant, Kavita},
+		year = {2023},
+		month = {08},
+		day = {07},
+		journal = {Results in Mathematics},
+		volume = {78},
+		number = {5},
+		pages = {200},
+		doi = {10.1007/s00025-023-01963-x},
+		url = {https://doi.org/10.1007/s00025-023-01963-x},
+		issn = {1420-9012}
+	  }
+	  
+</code>
+											</pre>
+											<button class="close-button bg-red-500 text-white py-2 px-4 mt-4 rounded">Close</button>
+										</div>
+									</div>
+									<div class="border rounded-lg border-gray-600 p-1">
+										<a href="https://link.springer.com/article/10.1007/s00025-023-01963-x#Abs1" target="_blank" class="text-blue-500 hover:text-blue-800">Journal</a>
+									</div>
+									<div class="border rounded-lg border-gray-600 p-1">
+										<a href="https://arxiv.org/pdf/2307.11802" target="_blank" class="text-blue-500 hover:text-blue-800">PDF</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<hr class="w-1/2 h-px mx-auto bg-gray-300 border-0">
+
+						<div class="py-8 flex flex-wrap md:flex-nowrap ml-4">
+							<div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+								<img src="../assets/img/Lma.jpg" alt="preprint" class="w-36 h-auto ">
+							</div>
+							<div class="md:flex-grow">
+								<p class="mb-4 text-lg">
+									The generating graph of dicyclic groups.
+								</p>
+								<p class="mb-4">
+									<span class="authors">Authors: </span><strong>Kavita Samant</strong> and A. Satyanarayana Reddy
+								</p>
+								<p class="mb-4">
+									<span class="text-gray-400">Year of arXiv: 2024</span>
+									<br>
+									<span class="text-gray-400">Year of publication: 2026</span>
+									<br>
+									<span class="text-gray-400">Volume 74, Issue-4, 11 February 2026, Pages 383-407 </span>
+								</p>
+								<div class="flex space-x-4 items-center my-2">
+									<div class="border rounded-lg border-gray-600 p-1">
+										<button class="abstract-button text-white rounded text-blue-500">Abstract</button>
+									</div>
+									<div class="abstract-overlay hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+										<div class="abstract-content p-4 bg-white rounded w-1/2">
+											<p class="leading-relaxed lg:text-lg md:text-base text-justify">
+												For a group $G$, the generating graph of $G,$ denoted by $Γ\Gamma(G)$. We define $Q_n=\langle x,y: x^2=y^4=1,x^n=y^2,y^{-1}xy=x^{-1}\rangle, the dicyclic group of order $4n$. This paper primarily explores the graph characteristics and spectral properties of various matrices associated with $\Gamma(Q_n)$. Specifically, we determine the complete spectrum of the adjacency, Laplacian, distance and eccentricity matrices. Additionally, we completely determine the spectrum of the distance and eccentricity matrices of the dihedral group of order $2n$, denoted as $D_n$.
+											</p>
+											<button class="close-button bg-red-500 text-white py-2 px-4 mt-4 rounded">Close</button>
+										</div>
+									</div>
+									<div class="border rounded-lg border-gray-600 p-1">
+										<button class="abstract-button text-white rounded text-blue-500">bib</button>
+									</div>
+									<div class="abstract-overlay hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+										<div class="bib-content p-2 bg-white rounded w-1/2">
+											<pre>
+<code class="latex"> 
+	@article{Samant04032026,
+		author = {Kavita Samant and A. Satyanarayana Reddy},
+		title = {The generating graph of dicyclic groups},
+		journal = {Linear and Multilinear Algebra},
+		volume = {74},
+		number = {4},
+		pages = {383--407},
+		year = {2026},
+		publisher = {Taylor \& Francis},
+		doi = {10.1080/03081087.2026.2623170},
+		URL = {https://doi.org/10.1080/03081087.2026.2623170},
+		eprint = {https://doi.org/10.1080/03081087.2026.2623170}}
+</code>
+											</pre>
+											<button class="close-button bg-red-500 text-white py-2 px-4 mt-4 rounded">Close</button>
+										</div>
+									</div>
+									<div class="border rounded-lg border-gray-600 p-1">
+										<a href="https://www.tandfonline.com/doi/full/10.1080/03081087.2026.2623170" target="_blank" class="text-blue-500 hover:text-blue-800">Journal</a>
+									</div>
+									<div class="border rounded-lg border-gray-600 p-1">
+										<a href="https://arxiv.org/pdf/2406.05157" target="_blank" class="text-blue-500 hover:text-blue-800">PDF</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<hr class="w-1/2 h-px mx-auto bg-gray-300 border-0">
+
+						<div class="py-8 flex flex-wrap md:flex-nowrap ml-4">
+							<div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+								<img src="../assets/img/Pro.jpg" alt="preprint" class="w-36 h-auto ">
+							</div>
+							<div class="md:flex-grow">
+								<p class="mb-4 text-lg">
+									An Arithmetic Characterization of 2-Generated Numbers
+								</p>
+								<p class="mb-4">
+									<span class="authors">Authors: </span><strong>Kavita Samant</strong>, Bireswar Das, and Dhara Thakkar
+								</p>
+								<p class="mb-4">
+									<span class="text-gray-400">Year of arXiv: 2025</span>
+									<br>
+									<span class="text-gray-400">Year of acceptance: 2026</span>
+									<br>
+									<span class="text-gray-400">.. </span>
+								</p>
+								<div class="flex space-x-4 items-center my-2">
+									<div class="border rounded-lg border-gray-600 p-1">
+										<button class="abstract-button text-white rounded text-blue-500">Abstract</button>
+									</div>
+									<div class="abstract-overlay hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+										<div class="abstract-content p-4 bg-white rounded w-1/2">
+											<p class="leading-relaxed lg:text-lg md:text-base text-justify">
+												A group $G$ is said to be $k$-generated if it has a generating set with k elements. A positive integer $n$ is called a \emph{2-generated number} if every group of order $n$ is 2-generated. In this article, we establish an arithmetic characterization of 2-generated numbers expressed in terms of the prime factorization of n.
+											</p>
+											<button class="close-button bg-red-500 text-white py-2 px-4 mt-4 rounded">Close</button>
+										</div>
+									</div>
+									<div class="border rounded-lg border-gray-600 p-1">
+										<button class="abstract-button text-white rounded text-blue-500">bib</button>
+									</div>
+									<div class="abstract-overlay hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+										<div class="bib-content p-2 bg-white rounded w-1/2">
+											<pre>
+<code class="latex"> 
+	@misc{das2026arithmeticcharacterization2generatednumbers,
+		title={An Arithmetic Characterization of 2-Generated Numbers}, 
+		author={Bireswar Das and Kavita Samant and Dhara Thakkar},
+		year={2026},
+		eprint={2508.16356},
+		archivePrefix={arXiv},
+		primaryClass={math.GR},
+		url={https://arxiv.org/abs/2508.16356}, 
+  }
+</code>
+											</pre>
+											<button class="close-button bg-red-500 text-white py-2 px-4 mt-4 rounded">Close</button>
+										</div>
+									</div>
+									<div class="border rounded-lg border-gray-600 p-1">
+										<a href="https://arxiv.org/abs/2508.16356" target="_blank" class="text-blue-500 hover:text-blue-800">Arxiv Link</a>
+									</div>
+									<div class="border rounded-lg border-gray-600 p-1">
+										<a href="https://arxiv.org/pdf/2508.16356" target="_blank" class="text-blue-500 hover:text-blue-800">PDF</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						
+						<!-- <hr class="h-0.5 my-4 bg-gray-300 border-0">
+
+						<div class="text-center">
+							<h1 class="text-2xl font-bold">PhD Thesis</h1>
+						</div>
+									
+						<hr class="h-0.5 my-4 bg-gray-300 border-0">
+
+						<div class="-my-8">
+							<div class="py-8 flex flex-wrap md:flex-nowrap ml-4">
+								<div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+									<img src="../assets/img/thesis.png" alt="thesis" class="w-36 h-auto ">
+								</div>
+								<div class="md:flex-grow">
+									<p class="mb-4 text-lg">
+										Cut Locus of Submanifolds: A Geometric and Topological Viewpoint
+									</p>
+									<p class="mb-4">
+										<span class="authors">Supervisor: </span> Somnath Basu
+									</p>
+									<p class="mb-4">
+										<span class="text-gray-400">Year of defense: 2022 </span>
+									</p>
+									<div class="flex space-x-4 items-center my-2">
+										<div class="border rounded-lg border-gray-600 p-1">
+											<button class="abstract-button text-white rounded text-blue-500">bib</button>
+										</div>
+										<div class="abstract-overlay hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+											<div class="bib-content p-2 bg-white rounded w-1/2">
+												<pre>
+<code class="latex"> 
+	@article{prasad2023cut,
+	title={Cut Locus of Submanifolds: A Geometric and Topological Viewpoint},
+	author={Prasad, Sachchidanand},
+	journal={arXiv preprint arXiv:2303.14931},
+	year={2023}
+	}
+</code>
+												</pre>
+												<button class="close-button bg-red-500 text-white py-2 px-4 mt-4 rounded">Close</button>
+											</div>
+										</div>  
+										<div class="border rounded-lg border-gray-600 p-1">
+											<a href="../assets/attachments/Thesis_Sachchidanand_large.pdf" target="_blank" class="text-blue-500 hover:text-blue-800">Color PDF</a>
+										</div>
+										<div class="border rounded-lg border-gray-600 p-1">
+											<a href="../assets/attachments/Thesis_Sachchidanand_gray.pdf" target="_blank" class="text-blue-500 hover:text-blue-800">Grayscale PDF</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<hr class="h-0.5 my-4 bg-gray-300 border-0">
+
+						<div class="text-center">
+							<h1 class="text-2xl font-bold capitalize">Some other notes</h1>
+						</div>
+										
+						<hr class="h-0.5 my-4 bg-gray-300 border-0">
+
+						<div class="-my-8">
+							<div class="py-8 flex flex-wrap md:flex-nowrap ml-4">
+								<div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+									<img src="../assets/img/IFT.svg" alt="Inverse Function theorem" class="w-36 h-auto ">
+								</div>
+								<div class="md:flex-grow">
+									<p class="mb-4 text-lg">
+										Inverse function theorem and its application
+									</p>
+									<div class="flex space-x-4 items-center my-2">
+										<div class="border rounded-lg border-gray-600 p-1">
+											<button class="abstract-button text-white rounded text-blue-500">bib</button>
+										</div>
+										<div class="abstract-overlay hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+											<div class="bib-content p-2 bg-white rounded w-1/2">
+												<pre>
+<code class="latex"> 
+	@article{prasadinverse,
+		title={Inverse Function Theorem and its Applications},
+		author={Prasad, Sachchidanand}
+	}
+</code>
+												</pre>
+												<button class="close-button bg-red-500 text-white py-2 px-4 mt-4 rounded">Close</button>
+											</div>
+										</div>  
+										<div class="border rounded-lg border-gray-600 p-1">
+											<a href="../assets/attachments/Inverse_Function_Theorem.pdf" target="_blank" class="text-blue-500 hover:text-blue-800">PDF</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<hr class="w-1/2 h-px mx-auto bg-gray-300 border-0 my-4">
+
+						<div class="-my-8">
+							<div class="py-8 flex flex-wrap md:flex-nowrap ml-4">
+								<div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+									<img src="../assets/img/geodesic-equations.svg" alt="geodesic equations" class="w-36 h-auto ">
+								</div>
+								<div class="md:flex-grow">
+									<p class="mb-4 text-lg">
+										Geodesic Equation with Euler Lagrange Equation
+									</p>
+									<p class="mb-4">
+										<span class="text-gray"></span>
+									</p>
+									<div class="flex space-x-4 items-center my-2">
+
+										<div class="border rounded-lg border-gray-600 p-1">
+											<a href="../assets/attachments/Geodesic_Equation_with_Euler_Lagrange_Equation.pdf" target="_blank" class="text-blue-500 hover:text-blue-800">PDF</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<hr class="h-0.5 my-4 bg-gray-300 border-0">
+					 -->
+			</section>
+
+			<!-- footer -->
+			<footer class="foot mt-auto border-t border-gray-200">
+				<div class="container px-4 py-4 mx-auto flex items-center sm:flex-row flex-col">
+				  <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© <script>document.write(new Date().getFullYear())</script> Kavita
+				  </p>
+				  <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">Last updated: <span id="updated"></span>
+				  </p>
+				  <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+	
+				
+					<!-- <a class="ml-3 text-gray-500 hover:text-purple-700" href="https://github.com/prasadsachchidanand" target="_blank">
+					  <i class="fa-brands fa-github"></i>
+					</a> -->
+					<a class="ml-3 text-gray-500 hover:text-green-500" href="https://www.researchgate.net/profile/Kavita-Samant" target="_blank">
+					  <i class="ai ai-researchgate ai-lg"></i>
+					</a>
+					<!-- <a class="ml-3 text-gray-500 hover:text-gray-900" href="https://nitrkl.academia.edu/SachchidanandPrasad" target="_blank">
+					  <i class="ai ai-academia"></i>
+					</a> -->
+				  </span>
+				</div>
+				<hr class="py-1 w-1/4 m-auto">
+				<div class="items-center">
+					<p class="text-center">
+						<span class="text-gray-500 text-sm mr-1">No of visitors: </span>
+						<img src="https://counter.digits.net/?counter={}&COUNTER_TEMPLATE1&background=EDF2F7&foreground=8D8D8D" 
+						alt="Hit Counter by Digits" border="0" class="w-11 inline" /> 
+						<span class="text-gray-500 text-sm ml-1">Counter provided by <a href="https://www.digits.net/" class="text-gray-400 hover:text-gray-500" target="_blank">Digits.Net</a></span>
+					</p>
+				</div>
+			</footer>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+		<script>
+			function myFunction() {
+				var x = document.lastModified;
+				document.getElementById("updated").innerHTML = new Date(document.lastModified).toISOString().substr(0, 10);
+				}
+
+				myFunction()
+		</script>
+
+		<!-- MathJax -->
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<script id="dsq-count-scr" src="//my-google-site.disqus.com/count.js" async></script>
+		
+		<script>
+		  MathJax = {
+			tex: {
+			  inlineMath: [
+				['$', '$'],
+				['\\(', '\\)']
+			  ],
+			  displayMath: [
+				['$$', '$$'],
+				['\\[', '\\]']
+			  ]
+			},
+			svg: {
+			  fontCache: 'global'
+			}
+		  };
+		</script>
+
+		<!-- Script for abstract pop-up -->
+		<script>
+			const abstractButtons = document.querySelectorAll('.abstract-button');
+			const abstractOverlays = document.querySelectorAll('.abstract-overlay');
+			const closeButtons = document.querySelectorAll('.close-button');
+		  
+			function toggleAbstract(index) {
+			  abstractOverlays[index].classList.toggle('hidden');
+			}
+		  
+			abstractButtons.forEach((button, index) => {
+			  button.addEventListener('click', () => {
+				toggleAbstract(index);
+			  });
+			});
+		  
+			closeButtons.forEach((button, index) => {
+			  button.addEventListener('click', () => {
+				toggleAbstract(index);
+			  });
+			});
+		  
+			document.addEventListener('keydown', (event) => {
+			  if (event.key === 'Escape') {
+				abstractOverlays.forEach((overlay) => {
+				  overlay.classList.add('hidden');
+				});
+			  }
+			});
+		  </script>
+	</body>
+</html>
+

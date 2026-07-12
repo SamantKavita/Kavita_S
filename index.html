@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	  <title>Kavita Samant | PhD | SNU </title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.ico"/>
+
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+   
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+  <body class="font-serif" style="background: #ffffff;">
+    <div class="flex flex-col h-screen">
+      <!-- navbar -->
+      <div class="fixed left-0 right-0 w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 z-10">
+        <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto   md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+          <div class="p-4 flex flex-row items-center justify-between">
+            <a href="index.html" class="flex items-center text-sm font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">
+              <img src="assets/img/kavita.svg" class="w-1/12 mr-2" alt="Logo">
+              <span>Samant</span>
+            </a>            
+            <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+              <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+          <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+            <a class="px-4 py-2 mt-2 text-sm font-semibold bg-gray-200 text-gray-900 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html">Home</a>
+            <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="research/">Research</a>
+            <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="resume/">CV</a>
+            <!-- <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="articles/">Articles</a> -->
+            <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="miscellaneous/">Miscellaneous</a>
+            <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="contact/">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <!-- first section -->
+      <section class="text-black-600 body-font">
+        <div class="container px-5 py-24 mx-auto flex flex-col">
+          <div class="lg:w-5/6 mx-auto">
+            <div class="flex flex-col sm:flex-row mt-10">
+              <div class="sm:mt-24 sm:w-1/3 text-center sm:pr-8 sm:py-8">
+                <div class="w-40 h-40 rounded-full inline-flex items-center justify-center bg-black-400 text-black-400">
+                  <img src="assets/img/kavita.png" alt="Kavita Samant" style="border-radius: 90%;">
+                </div>
+                <div class="flex flex-col items-center text-center justify-center">
+                  <h2 class="font-medium title-font mt-2 text-black-900 text-lg">Kavita Samant</h2>
+                  <div class="w-12 h-1 bg-indigo-500 rounded mt-2 mb-2"></div>
+                  <p class="text-base py-2">Research Scholar </p>         <a href="https://snu.edu.in/home/" target="_blank" class="text-pink-800 hover:text-pink-400">Shiv Nadar Institution of Eminence, Noida</a>
+               
+                  <p class="text-base py-2 border-t-2">
+                    <i class="fa-solid fa-envelope text-sm mr-2"></i> <a class="text-sm" href="mailto:kavitasamant08@gmail.com" target="_blank">Email</a>
+                  </p>
+                </div>
+              </div>
+              <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+                <!-- <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                  <svg class="mr-1.5 h-2 w-2 text-green-500" viewBox="0 0 8 8" fill="currentColor">
+                    <circle cx="4" cy="4" r="3" />
+                  </svg>
+                  New
+                </span>
+                <span class="ml-2 text-lg">This is my new text</span> -->
+
+                <div class="flex flex-col items-center text-center justify-center">
+                  <h2 class="font-serif text-blue-800 text-2xl title-font font-medium">ABOUT ME</h2>
+                  <div class="w-24 h-1 bg-indigo-900 rounded mt-2 mb-4"></div>
+                </div>
+                <p class="font-serif leading-relaxed text-lg"> 
+                  Hello! Welcome to my homepage! 
+                </p>
+
+                <p class="mt-4 leading-relaxed text-sm text-justify"> 
+                  I am Kavita Samant, a PhD student at <a href="https://snu.edu.in/home/" class="text-blue-500 hover:text-blue-800" target="_blank">Shiv Nadar Institution of Eminence, Delhi-NCR</a> working under the supervision of <a href="https://snu.edu.in/faculty/satyanarayana-reddy/" class="text-blue-500 hover:text-blue-800" target="_blank">Dr. A. Satyanarayana Reddy</a>, exploring the exciting world of algebraic graph theory. Before this, I earned my M.Phil. degree from <a href="https://aud.ac.in/" class="text-blue-500 hover:text-blue-800" target="_blank">Dr. B. R. Ambedkar University Delhi</a>, under the supervision of <a href="https://aud.delhi.gov.in/geetha-venkataraman" class="text-blue-500 hover:text-blue-800" target="_blank">Prof. Geetha Venkataraman.</a>
+                    I completed my M.Sc. in Mathematics from <a href="https://www.du.ac.in/index.php?page=faculty-of-mathematical-sciences" target="_blank" class="text-blue-500 hover:text-blue-800">University of Delhi</a>, India.
+                </p>
+
+                <p class="mt-4 leading-relaxed text-sm text-justify"> 
+                  My primary area of interests are <em> Group Theory</em> and <em>Graph Theory</em>. More precisely, I am working on 2-generated groups, their generating graphs </a> and the spectral studies. In addition to my work, I also have a strong interest in Algebraic Combinatorics and Number Theory. More details about my research can be found <a href="research/" class="text-blue-500 hover:text-blue-800">here</a>. 
+                </p>
+
+                
+
+                <p class="mt-4 leading-relaxed text-sm text-justify"> 
+                  Other than mathematics, I love birdwatching. I have seen around 130 bird species so far. My instagram page is <a href="https://www.instagram.com/ornithophile28/?igsh=MXcyeXI4NWJncXdleQ%3D%3D#" class="text-blue-500 hover:text-blue-800">here</a>. 
+                </p>
+
+                <p class="mt-4 leading-relaxed text-sm text-justify">
+                  Find my <a href="research/#publications" class="text-blue-500 hover:text-blue-800">publications</a> and <a href="resume/#talks" class="text-blue-500 hover:text-blue-800">talks (with slides)</a>. 
+                </p>
+
+                <!-- <p class="mt-4 leading-relaxed text-sm text-justify"> 
+                  My updated CV can be found <a href="assets/attachments/CV_Sachchidanand.pdf" target="_blank" class="text-blue-500 hover:text-blue-800">here</a> (last updated 08 May 2023).  
+                </p> -->
+
+                <div class="flex flex-col items-center text-center justify-center">
+                  <h2 class="text-red-900 text-xl title-font font-medium">Latest Updates</h2>
+                  <div class="w-24 h-1 bg-red-500 rounded mt-2 mb-4"></div>
+                </div>
+                <p class="leading-relaxed text-sm"> 
+                  <ul class="list-disc list-inside">
+                    <li>Attended <a href= https://www.atmschools.org/school/2025/AIS/ac/application-form target="_blank" class="text-blue-500 hover:text-blue-800">AIS workshop on Advanced Combinatorics </a> at Ahmedabad University, Gujarat (15th December, 2025 -3rd January, 2026).</li> 
+                    <li>Presented my work at <a href="https://www.bits-pilani.ac.in/goa/meru2025/" target="_blank" class="text-blue-500 hover:text-blue-800">THIRD MERU COMBINATORICS CONFERENCE 2025</a> (28th -30th May, 2025).</li>
+                    <li> The paper titled </a> <a href=https://www.tandfonline.com/doi/full/10.1080/03081087.2026.2623170 target="_blank" class="text-blue-500 hover:text-blue-800"> The Generating Graph of Dicyclic Groups </a> recently published in Linear and Multilinear Algebra, 2026. </li>
+                  </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- footer -->
+      <footer class="foot mt-auto border-t border-gray-200">
+        <div class="container px-4 py-4 mx-auto flex items-center sm:flex-row flex-col">
+          <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© <script>document.write(new Date().getFullYear())</script> Kavita
+          </p>
+          <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">Last updated: <span id="updated"></span>
+          </p>
+          <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <a class="ml-3 text-gray-500 hover:text-purple-700" href="https://github.com/SamantKavita/" target="_blank">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a class="ml-3 text-gray-500 hover:text-green-500" href="https://www.researchgate.net/profile/Kavita-Samant" target="_blank">
+              <i class="ai ai-researchgate ai-lg"></i>
+            </a>
+          </span>
+        </div>
+      </footer>
+    
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script>
+      function myFunction() {
+        var x = document.lastModified;
+        document.getElementById("updated").innerHTML = new Date(document.lastModified).toISOString().substr(0, 10);
+      }
+      myFunction()
+    </script>
+  </body>
+</html>
